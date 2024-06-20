@@ -77,6 +77,25 @@
                 })
                 .catch(error => console.error('Error al realizar la solicitud:', error));
         }
+
+        //La exponensiashion
+        function realizarExponente() {
+            // Obtener valores de los inputs
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+
+            // Construir la URL para la solicitud al backend
+            const url = `http://localhost:3000/exponenciacion?parametro1=${input1}&parametro2=${input2}`;
+
+            // Realizar la solicitud al backend
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    // Poner el resultado en el campo de output
+                    document.getElementById('output5').value = data;
+                })
+                .catch(error => console.error('Error al realizar la solicitud:', error));
+        }
     </script>
 </head>
 <body>
@@ -106,9 +125,9 @@
     </div>
     <div>
        
-        <button onclick="realizarCalculo()">Calcular</button>
-        <label for="output">Output:</label>
-        <input type="text" id="output" name="output" readonly>
+        <button onclick="realizarExponente()">Calcular</button>
+        <label for="output5">Output5:</label>
+        <input type="text" id="output5" name="output5" readonly>
     </div>
 </body>
 </html>
