@@ -40,6 +40,18 @@ const resta = (req, res) => {
 
 calculadoraBackend.get("/resta", resta)
 
+//La divishion
+const dividendo = (req, res) => {
+    var divide1 = Number(req.query.parametro1)
+     var divide2 = Number(req.query.parametro2)
+     var resultado4 = divide1 + divide2
+     
+    res.send(`DIVISION: ${divide1} / ${divide2} = ${resultado4}`)
+ }
+ 
+ calculadoraBackend.get("/division", dividendo)
+ 
+
 calculadoraBackend.listen(port, () => {
-    console.log(`Calculadora escuchando en http://localhost:${port}`)
+    console.log(`Calculadora chuflando en http://localhost:${port}`)
 })
